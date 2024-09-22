@@ -1,0 +1,163 @@
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carlos Portfolio</title>
+    <link rel="stylesheet" href="/styles.scss" />
+  </head>
+
+  <body>
+    <main>
+      <div id="root">
+        <header>
+          <nav aria-labelledby="site-header-nav-label">
+            <h2 id="site-header-nav-label" class="hidden">Main</h2>
+            <ul>
+              <li>
+                <a class="limited-behavior" href="#home">HOME</a>
+              </li>
+              <li>
+                <a class="limited-behavior" href="#about">ABOUT</a>
+              </li>
+              <li>
+                <a class="limited-behavior" href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="section-ctn" id="home">
+          <div class="bg-animation">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="stars4"></div>
+          </div>
+          <div class="container">
+            <h1>Hey, I'm Carlos.</h1>
+            <div class="console-container">
+              <span id="text"></span>
+              <div class="focus-cursor" id="focusCursor">&#124;</div>
+            </div>
+            <a class="limited-behavior" href="#about">
+              <button>View My Work</button>
+            </a>
+          </div>
+        </div>
+        <div class="section-ctn" id="about">
+          <div class="container">
+            <div class="about-wrapper">
+              <h1>About Me</h1>
+              <div class="about-content">
+                <img
+                  class="photo"
+                  src="/assets/images/CVAL3137.JPG"
+                  alt="Headshot Photo"
+                />
+                <div class="about-text">
+                  <p>
+                    I'm a front end developer with a focus on UI, UX, animation
+                    and accessibility.
+                  </p>
+                  <p>
+                    Currently, I am employed by
+                    <a href="https://investcloud.com/" target="_blank"
+                      >InvestCloud</a
+                    >, building all sorts of cool software for financial
+                    advisors, wealth managers and more.
+                  </p>
+                  <p>
+                    I specialize in JavaScript, having worked with jQuery, React
+                    and Angular. I am an expert at Angular, utilizing the latest
+                    version (18 at the time of making this).
+                  </p>
+                  <p>
+                    In my free time, I enjoy cycling, spending time with family,
+                    hanging out with my dog Reggie and practicing submission
+                    grappling.
+                  </p>
+                  <p>Check out my resume <a href="">here</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-ctn" id="contact">
+          <div class="container">
+            <div class="contact-wrapper">
+              <div class="contact-content">
+                <h2>Let's Talk</h2>
+                <div class="form-wrapper">
+                  <div class="ctn">
+                    <form action="/submit-form" method="post">
+                      <div class="form-control">
+                        <input
+                          type="text"
+                          id="name"
+                          name="user_name"
+                          placeholder="Name"
+                          required
+                        />
+                      </div>
+                      <div class="form-control">
+                        <input
+                          type="email"
+                          id="mail"
+                          name="user_email"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
+                      <div class="form-control">
+                        <textarea
+                          id="msg"
+                          name="user_message"
+                          placeholder="Enter your message here..."
+                          required
+                        ></textarea>
+                      </div>
+                      <div>
+                        <button type="submit">Send Message</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="ctn">
+                    <span>
+                      If you'd like to chat, feel free to reach out via form or
+                      any of the below contact methods.
+                    </span>
+                    <div class="icon-wrapper">
+                      <a
+                        class="limited-behavior"
+                        href="https://github.com/CarlosValencia78"
+                        target="_blank"
+                      >
+                        <img
+                          class="photo"
+                          src="/assets/images/github-icon.png"
+                          alt="Github Icon"
+                        />
+                      </a>
+                      <a
+                        class="limited-behavior"
+                        href="https://linkedin.com/in/carlosvalencia78"
+                        target="_blank"
+                      >
+                        <img
+                          class="photo"
+                          src="/assets/images/linkedin-icon.png"
+                          alt="Headshot Photo"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
