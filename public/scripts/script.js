@@ -1,28 +1,28 @@
 (function () {
   let focusedNavItemIdx;
 
-  const navItems = document.querySelectorAll("header ul li");
-  const sectionCtns = document.querySelectorAll(".section-ctn");
+  const navItems = document.querySelectorAll('header ul li');
+  const sectionCtns = document.querySelectorAll('.section-ctn');
 
   function applySmoothScrollingToAnchorTags() {
     const anchorTags = document.querySelectorAll('#root a[href^="#"]');
 
     anchorTags.forEach((anchor) => {
-      anchor.addEventListener("click", (e) => {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault();
 
-        document.querySelector(e.target.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
+        document.querySelector(e.target.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
         });
       });
     });
   }
 
   function initTypingAnimation() {
-    const words = ["Software Engineer", "Stabbin Dude", "Made with Love <3"];
+    const words = ['Software Engineer', 'Stabbin Dude', 'Made with Love <3'];
 
-    let target = document.getElementById("text");
-    let con = document.getElementById("focusCursor");
+    let target = document.getElementById('text');
+    let con = document.getElementById('focusCursor');
 
     let visible = true;
     let waiting = false;
@@ -55,10 +55,10 @@
     }, 120);
     window.setInterval(() => {
       if (visible === true) {
-        con.className = "focus-cursor flicker";
+        con.className = 'focus-cursor flicker';
         visible = false;
       } else {
-        con.className = "focus-cursor";
+        con.className = 'focus-cursor';
 
         visible = true;
       }
@@ -96,13 +96,13 @@
   }
 
   function handleHeaderClassList(isIntersecting) {
-    const header = document.querySelector("#root header");
-    const hasClass = header.classList.contains("is-scrolling");
+    const header = document.querySelector('#root header');
+    const hasClass = header.classList.contains('is-scrolling');
 
     if (isIntersecting && hasClass) {
-      header.classList.remove("is-scrolling");
+      header.classList.remove('is-scrolling');
     } else if (!isIntersecting && !hasClass) {
-      header.classList.add("is-scrolling");
+      header.classList.add('is-scrolling');
     }
   }
 
@@ -113,13 +113,13 @@
   }
 
   function removeFocusFromNavItem() {
-    const focusedElement = document.querySelector(".focused");
-    focusedElement?.classList?.remove("focused");
+    const focusedElement = document.querySelector('.focused');
+    focusedElement?.classList?.remove('focused');
   }
 
   function focusOnNavItem(index) {
     focusedNavItemIdx = index;
-    navItems?.[focusedNavItemIdx]?.classList.add("focused");
+    navItems?.[focusedNavItemIdx]?.classList.add('focused');
   }
 
   function setPageBeforeUnload() {
@@ -131,9 +131,19 @@
   //very hacky, figure out something sexier
   function setFocusedToHomeNavItem() {
     setTimeout(() => {
-      const homeItem = document.querySelector("#root header li:first-child");
-      homeItem?.classList?.add("focused");
+      const homeItem = document.querySelector('#root header li:first-child');
+      homeItem?.classList?.add('focused');
     }, 250);
+  }
+
+  function removeLoader() {
+    window.setTimeout(() => {
+      const loaderCtn = document.querySelector('.loader-ctn');
+      const root = document.querySelector('#root');
+
+      loaderCtn.classList.add('hide');
+      root.classList.remove('loading');
+    }, 1500);
   }
 
   setPageBeforeUnload();
@@ -142,4 +152,5 @@
 
   initTypingAnimation();
   applySmoothScrollingToAnchorTags();
+  removeLoader();
 })();

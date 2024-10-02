@@ -4,11 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Carlos Portfolio</title>
     <link rel="stylesheet" href="./styles/styles.scss" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.jpg" />
   </head>
 
   <body>
     <main>
-      <div id="root">
+      <div class="loader-ctn">
+        <div class="loader"></div>
+      </div>
+      <div id="root" class="loading">
         <header>
           <nav aria-labelledby="site-header-nav-label">
             <h2 id="site-header-nav-label" class="hidden">Main</h2>
@@ -46,7 +50,6 @@
         <div class="section-ctn" id="about">
           <div class="container">
             <div class="about-wrapper">
-              <h1>About Me</h1>
               <div class="about-content">
                 <img
                   class="photo"
@@ -56,7 +59,8 @@
                 <div class="about-text">
                   <p>
                     I'm a front end developer with a focus on UI, UX, animation
-                    and accessibility.
+                    and accessibility. This silly little site you are viewing is
+                    written entirely in Vanilla JavaScript and some NodeJS!
                   </p>
                   <p>
                     Currently, I am employed by
@@ -75,7 +79,10 @@
                     hanging out with my dog Reggie and practicing submission
                     grappling.
                   </p>
-                  <p>Check out my resume <a href="">here</a>.</p>
+                  <p>
+                    Check out my resume
+                    <a href="/assets/resume.docx" download>here</a>.
+                  </p>
                 </div>
               </div>
             </div>
